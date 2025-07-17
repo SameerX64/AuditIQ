@@ -1,0 +1,33 @@
+# PowerShell Audit Script for Rule {rule_id}
+# Description: {description}
+
+# Error handling
+$ErrorActionPreference = "Stop"
+$VerbosePreference = "Continue"
+
+# Logging setup
+$LogFile = "audit_rule_{rule_id}.log"
+$ScriptStartTime = Get-Date
+
+function Write-Log {{
+    param($Message)
+    $LogMessage = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss'): $Message"
+    Write-Verbose $LogMessage
+    Add-Content -Path $LogFile -Value $LogMessage
+}}
+
+try {{
+    Write-Log "Starting audit for Rule {rule_id}"
+    
+    # Audit steps
+    {audit_steps}
+    
+    Write-Log "Audit completed successfully"
+    
+}} catch {{
+    Write-Log "Error during audit: $_"
+    throw $_
+}} finally {{
+    $Duration = (Get-Date) - $ScriptStartTime
+    Write-Log "Script execution time: $Duration"
+}}
