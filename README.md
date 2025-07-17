@@ -2,6 +2,8 @@
 
  <img src="https://github.com/SameerX64/Compliance-Automation/blob/main/header_image.png" alt="Screenshot" width="1000"/>
 
+ This Project was made under BMC Software's Hackathon organised at Pune Institute of Computer Technology, Pune
+
 A professional compliance script generator that automates the creation of audit and remediation scripts from CIS, DISA, and PCI DSS documentation using AI/ML and template-based generation.
 
 ## 🚀 Features
@@ -290,23 +292,11 @@ flake8 .
    - Process PDFs in smaller chunks
    - Use more efficient PDF processing
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ### Development Guidelines
 - Follow PEP 8 style guidelines
 - Add tests for new features
 - Update documentation
 - Ensure backward compatibility
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -315,11 +305,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - PyMuPDF for PDF processing
 - Flask for web framework
 - Open source community for inspiration
-
-## 📞 Support
-
-For support, please open an issue in the GitHub repository or contact the maintainers.
-
 ---
 
 **Made with ❤️ for compliance automation**
