@@ -307,4 +307,4 @@ flake8 .
 - Open source community for inspiration
 ---
 
-**Made with ❤️ for compliance automation**
+
