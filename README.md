@@ -305,10 +305,11 @@ flake8 .
 - PyMuPDF for PDF processing
 - Flask for web framework
 - Open source community for inspiration
----
+
 
 ## 👥 Team Members
 - Sameer Dhande
 - Yash Amane
 - Omkar Deshmukh
 - Apurv Wadnere
+---
