@@ -310,3 +310,5 @@ flake8 .
 ## 👥 Team Members
 - Sameer Dhande
 - Yash Amane
+- Omkar Deshmukh
+- Apurv Wadnere
