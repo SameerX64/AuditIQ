@@ -307,4 +307,6 @@ flake8 .
 - Open source community for inspiration
 ---
 
-
+## 👥 Team Members
+- Sameer Dhande
+- Yash Amane
