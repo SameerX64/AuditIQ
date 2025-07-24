@@ -1,4 +1,4 @@
-# 🔐 Compliance Automation System
+# 🔐 AuditIQ - Compliance Automation System
 
 This project was made during the BMC Software's College Hackathon conducted at Pune Institute of Computer Technology, Pune by BMC Software's team.
 
