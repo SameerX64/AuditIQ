@@ -2,6 +2,8 @@
 
 This project was made during the BMC Software's College Hackathon conducted at Pune Institute of Computer Technology, Pune by BMC Software's team.
 
+![Logo](/screenshots-images/header_image.png)
+
 A comprehensive **MERN Stack** application with AI-powered compliance management, automated script generation, and policy analysis capabilities.
 
 ## 🌟 Features
