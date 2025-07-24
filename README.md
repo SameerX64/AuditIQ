@@ -185,44 +185,39 @@ npm start
 ![System Architecture](docs/images/00-system-architecture.png)
 *Comprehensive system architecture showing the integration between frontend, backend, and AI services*
 
-### Authentication & Login
+### Document Upload
 ![Login Authentication](docs/images/01-login-authentication.png)
-*Secure JWT-based authentication with modern UI design and form validation*
-
-### Dashboard Overview
-![Dashboard Overview](docs/images/02-dashboard-overview.png)
-*Real-time analytics dashboard with compliance status tracking and system metrics*
-
-### Document Management
-![Document Upload](docs/images/03-document-upload.png)
 *Intuitive document upload interface with drag-and-drop functionality*
+
+### Profile 
+![Dashboard Overview](docs/images/02-dashboard-overview.png)
+
+### Analysis and Reports
+![Document Upload](docs/images/03-document-upload.png)
+*Real-time analytics dashboard with compliance status tracking and system metrics*
 
 ![Document Analysis](docs/images/04-document-analysis.png)
 *AI-powered document analysis with framework detection and policy extraction*
 
-### Script Generation & Management
 ![Script Generation](docs/images/05-script-generation.png)
 *Automated compliance script generation with customizable parameters*
 
+### Script Generation
 ![Generated Scripts](docs/images/06-generated-scripts.png)
+
+![Responsive Mobile](docs/images/10-responsive-mobile.png)
 *Generated scripts with syntax highlighting and validation features*
 
-### User Management & Analytics
+### Script Library
 ![User Profile](docs/images/07-user-profile.png)
 *User profile management with role-based access control*
 
+### User Dashboard
 ![Analytics & Reporting](docs/images/08-analytics-reporting.png)
 *Comprehensive analytics and reporting dashboard with detailed metrics*
 
-### UI/UX Features
-![Dark Light Theme](docs/images/09-dark-light-theme.png)
-*Dark/Light theme toggle for enhanced user experience*
 
-![Responsive Mobile](docs/images/10-responsive-mobile.png)
-*Mobile-responsive design with Material-UI components*
-
-
-### Team Members
+### 👥👥 Team Members
 - Sameer Dhande
 - Yash Amane
 - Omkar Deshmukh
