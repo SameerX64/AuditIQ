@@ -1,0 +1,44 @@
+# PowerShell Remediation Script for Rule {rule_id}
+# Description: {description}
+
+# Error handling
+$ErrorActionPreference = "Stop"
+$VerbosePreference = "Continue"
+
+# Logging setup
+$LogFile = "remediation_rule_{rule_id}.log"
+$ScriptStartTime = Get-Date
+$BackupPath = "backup_$(Get-Date -Format 'yyyyMMdd_HHmmss')"
+
+function Write-Log {{
+    param($Message)
+    $LogMessage = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss'): $Message"
+    Write-Verbose $LogMessage
+    Add-Content -Path $LogFile -Value $LogMessage
+}}
+
+function Backup-Settings {{
+    Write-Log "Creating backup of current settings"
+    # Add backup logic here
+}}
+
+try {{
+    Write-Log "Starting remediation for Rule {rule_id}"
+    
+    # Create backup
+    Backup-Settings
+    
+    # Remediation steps
+    {remediation_steps}
+    
+    Write-Log "Remediation completed successfully"
+    
+}} catch {{
+    Write-Log "Error during remediation: $_"
+    Write-Log "Attempting to restore from backup"
+    # Add restore logic here
+    throw $_
+}} finally {{
+    $Duration = (Get-Date) - $ScriptStartTime
+    Write-Log "Script execution time: $Duration"
+}}

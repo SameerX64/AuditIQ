@@ -1,0 +1,42 @@
+#!/bin/bash
+# Remediation Script for Rule {rule_id}
+# Description: {description}
+
+# Error handling
+set -e
+trap 'echo "Error on line $LINENO"' ERR
+
+# Logging setup
+LOG_FILE="remediation_rule_{rule_id}.log"
+SCRIPT_START=$(date +%s)
+BACKUP_DIR="backup_$(date +%Y%m%d_%H%M%S)"
+
+log() {{
+    echo "$(date '+%Y-%m-%d %H:%M:%S'): $1" | tee -a "$LOG_FILE"
+}}
+
+backup_settings() {{
+    log "Creating backup of current settings"
+    mkdir -p "$BACKUP_DIR"
+    # Add backup logic here
+}}
+
+restore_backup() {{
+    log "Attempting to restore from backup"
+    # Add restore logic here
+}}
+
+log "Starting remediation for Rule {rule_id}"
+
+# Create backup
+backup_settings
+
+# Remediation steps
+{remediation_steps}
+
+log "Remediation completed successfully"
+
+# Calculate duration
+SCRIPT_END=$(date +%s)
+DURATION=$((SCRIPT_END - SCRIPT_START))
+log "Script execution time: $DURATION seconds"
