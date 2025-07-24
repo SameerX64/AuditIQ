@@ -1,0 +1,46 @@
+{
+  "name": "ai-ml-compliance-system",
+  "version": "1.0.0",
+  "description": "Professional AI/ML powered compliance management system with MERN stack",
+  "main": "README.md",
+  "scripts": {
+    "setup": "./setup.sh",
+    "dev": "concurrently \"npm run dev:ai\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:ai": "cd ai-ml-service && source venv/bin/activate && python app.py",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ai-ml-compliance-system.git"
+  },
+  "keywords": [
+    "compliance",
+    "ai",
+    "ml",
+    "security",
+    "automation",
+    "mern",
+    "react",
+    "nodejs",
+    "python",
+    "flask",
+    "mongodb"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "python": ">=3.8.0"
+  }
+}

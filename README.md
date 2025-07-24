@@ -1,313 +1,228 @@
-﻿# AI-Powered Compliance Script Generator
+# 🔐 Compliance Automation System
 
- <img src="https://github.com/SameerX64/Compliance-Automation/blob/main/header_image.png" alt="Screenshot" width="1000"/>
+This project was made during the BMC Software's College Hackathon conducted at Pune Institute of Computer Technology, Pune by BMC Software's team.
 
- This Project was made under BMC Software's Hackathon organised at Pune Institute of Computer Technology, Pune
+A comprehensive **MERN Stack** application with AI-powered compliance management, automated script generation, and policy analysis capabilities.
 
-A professional compliance script generator that automates the creation of audit and remediation scripts from CIS, DISA, and PCI DSS documentation using AI/ML and template-based generation.
+## 🌟 Features
 
-## 🚀 Features
+### 🔒 **Authentication & Authorization**
+- JWT-based secure authentication
+- Role-based access control (Admin, User, Auditor, Manager)
+- User profile management with preferences
 
-- **Automated PDF Processing**: Extract compliance rules from PDF documents
-- **Dual-Mode Script Generation**:
-  - AI-powered generation using Google Gemini Pro
-  - Template-based generation with customizable templates
-- **Multi-Platform Support**:
-  - Windows (PowerShell)
-  - Linux/Unix (Bash)
-- **Built-in Features**:
-  - Comprehensive error handling
-  - Detailed logging with timestamps
-  - Backup and restore functionality
-  - Progress tracking
-  - Template customization
-  - Security best practices
+### 📄 **Document Management**
+- PDF document upload and analysis
+- Compliance framework detection (CIS, NIST, ISO27001, SOX)
+- Policy extraction and requirement analysis
+- Document storage with metadata
 
-## 🛠️ Technologies Used
+### ⚡ **AI-Powered Script Generation**
+- Automated audit script generation
+- Remediation script creation
+- Cross-platform support (Windows PowerShell, Linux Bash)
+- Script validation and syntax checking
 
-- **Backend**: Python 3.9+, Flask
-- **AI/ML**: Google Gemini Pro, LangChain, Transformers
-- **PDF Processing**: PyMuPDF
-- **Template System**: Custom Jinja2-based templates
-- **Dependencies**: See `requirements.txt`
+### 📊 **Analytics & Reporting**
+- Real-time dashboard analytics
+- Compliance status tracking
+- User activity monitoring
+- System performance metrics
 
-## 📁 Project Structure
+### **Technology Stack**
 
-```
-Compliance-Automation/
-├── app.py                    # Main Flask application
-├── requirements.txt          # Python dependencies
-├── .env                      # Environment configuration (not tracked in git)
-├── .gitignore                # Git ignore rules
-├── README.md                 # This file
-├── CIS_Microsoft_Windows_Server_2022_Benchmark_v3.0.0.pdf  # Example benchmark document
-├── header_image.png          # UI header image
-├── src/                      # Core application code
-│   ├── ai/
-│   │   └── model.py          # AI model implementation
-│   ├── api/
-│   │   └── routes.py         # API endpoints
-│   ├── models/
-│   │   └── compliance.py     # Data models
-│   └── templates/            # Script templates
-│       ├── windows/
-│       │   └── powershell/
-│       │       ├── audit_template.txt
-│       │       ├── remediation_template.txt
-│       │       └── functions.json
-│       └── linux/
-│           ├── shell/        # Shell script templates
-│           └── bash/
-│               ├── audit_template.txt
-│               ├── remediation_template.txt
-│               └── functions.json
-├── static/                   # Static assets for web interface
-│   ├── main.js               # Frontend JavaScript
-│   └── styles.css            # CSS styles
-├── templates/                # Flask HTML templates
-│   └── index.html            # Main application interface
-└── uploads/                  # Document upload directory
-    └── CIS_Microsoft_Windows_Server_2022_Benchmark_v3.0.0.pdf  # Uploaded benchmark
-```
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| **Frontend** | React.js, Material-UI, Axios | User Interface & Experience |
+| **Backend** | Node.js, Express.js, JWT | API Server & Business Logic |
+| **Database** | MongoDB Atlas | Data Storage & Management |
+| **AI Service** | Python Flask, CORS | AI/ML Processing & Analysis |
+| **Authentication** | JWT, bcrypt | Security & User Management |
 
-## ⚙️ Setup and Installation
+## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.9 or higher
-- Google Gemini API key (Get one from [Google AI Studio](https://makersuite.google.com/app/apikey))
+- Node.js (v16 or higher)
+- Python (v3.8 or higher)
+- MongoDB Atlas account
+- Git
 
-### Installation Steps
-
-1. **Clone the repository:**
+### 1. Clone Repository
 ```bash
-git clone https://github.com/SameerX64/Compliance-Automation.git
-cd Compliance-Automation
+git clone <your-repo-url>
+cd Compliance-Automation-Main
 ```
 
-2. **Create and activate a virtual environment:**
+### 2. Environment Setup
+
+Create `.env` files in each service directory by copying the example files:
+
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Backend environment
+cp backend/.env.example backend/.env
+
+# Frontend environment  
+cp frontend/.env.example frontend/.env
+
+# AI Service environment
+cp ai-ml-service/.env.example ai-ml-service/.env
 ```
 
-3. **Install dependencies:**
+Then edit each `.env` file with your actual values:
+
+#### Backend `.env`
+```env
+NODE_ENV=development
+PORT=5000
+MONGODB_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=your_jwt_secret_key
+AI_SERVICE_URL=http://localhost:5001
+```
+
+#### Frontend `.env`
+```env
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_AI_SERVICE_URL=http://localhost:5001
+```
+
+#### AI Service `.env`
+```env
+FLASK_ENV=development
+FLASK_APP=app_simple.py
+GOOGLE_API_KEY=your_google_api_key_here
+```
+### 3. Installation & Setup
+
+#### Install Dependencies
 ```bash
+# Backend dependencies
+cd backend
+npm install
+
+# Frontend dependencies
+cd ../frontend
+npm install
+
+# AI Service dependencies
+cd ../ai-ml-service
 pip install -r requirements.txt
 ```
 
-4. **Configure environment variables:**
+### 4. Start Services
+
+#### Option 1: Use Setup Scripts
 ```bash
-# Create and edit the .env file with your settings:
-# GOOGLE_API_KEY=your_gemini_api_key_here
+# Make scripts executable
+chmod +x setup.sh start-dev.sh
+
+# Run setup (installs dependencies)
+./setup.sh
+
+# Start all services
+./start-dev.sh
 ```
 
-5. **Run the application:**
+#### Option 2: Manual Start
 ```bash
-python app.py
+# Terminal 1: Start AI Service
+cd ai-ml-service
+python app_simple.py
+
+# Terminal 2: Start Backend
+cd backend
+npm run dev
+
+# Terminal 3: Start Frontend
+cd frontend
+npm start
 ```
 
-The server will start on `http://localhost:5000`
+### 5. Access Application
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:5000
+- **AI Service**: http://localhost:5001
 
-## 🔧 Configuration
+## 🤖 AI Service Features
 
-### Environment Variables (.env)
-```properties
-GOOGLE_API_KEY=your_gemini_api_key_here
-FLASK_ENV=development
-FLASK_DEBUG=1
-MODEL_PATH=microsoft/codebert-base
-GENERATION_CONFIG={"temperature":0.3,"top_p":0.9,"top_k":40}
-MAX_OUTPUT_TOKENS=2048
-SAFETY_SETTINGS={"HARASSMENT":"block_none","HATE_SPEECH":"block_none","DANGEROUS_CONTENT":"block_none"}
-LOG_LEVEL=INFO
-```
+### Document Analysis
+- **Framework Detection**: Automatically identifies compliance frameworks
+- **Policy Extraction**: Extracts key requirements and controls
+- **Risk Assessment**: Categorizes requirements by risk level
+- **Implementation Guidance**: Provides step-by-step implementation steps
 
-## 📋 Version Control
+### Script Generation
+- **Multi-Platform**: Windows PowerShell and Linux Bash support
+- **Template-Based**: Uses predefined templates for consistency
+- **Customizable**: Adapts to specific compliance requirements
+- **Validation**: Built-in syntax and security validation
 
-### .gitignore Configuration
+## 🔒 Security Features
 
-The project includes a comprehensive `.gitignore` file that excludes:
+- **JWT Authentication**: Secure token-based authentication
+- **Password Hashing**: bcrypt encryption for password storage
+- **CORS Protection**: Cross-origin request security
+- **Input Validation**: Comprehensive request validation
+- **Error Handling**: Secure error responses without data leakage
 
-- Python bytecode and cache files
-- Virtual environment directories
-- Environment configuration files (.env)
-- User uploads (except for examples)
-- OS-specific files
-- IDE settings
-- Logs and temporary files
+## 📊 User Roles & Permissions
 
-This ensures that sensitive information and unnecessary files aren't committed to the repository.
+| Role | Upload Documents | Generate Scripts | View All Scripts | Manage Users | Access Analytics |
+|------|------------------|------------------|------------------|--------------|------------------|
+| **User** | ✅ | ✅ | ❌ | ❌ | ❌ |
+| **Auditor** | ✅ | ✅ | ✅ | ❌ | ✅ |
+| **Manager** | ✅ | ✅ | ✅ | ❌ | ✅ |
+| **Admin** | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-## 📝 Usage
+### Environment Configuration
+- Set `NODE_ENV=production` for backend
+- Configure MongoDB Atlas connection
+- Set secure JWT secrets
+- Enable CORS for your domain
 
-### 1. Web Interface
+## 📸 Screenshots
 
-1. Open your browser and navigate to `http://localhost:5000`
-2. Upload a compliance document (PDF format)
-3. Select policies from the extracted list
-4. Choose:
-   - Script type: Audit or Remediation
-   - Operating System: Windows or Linux
-   - Generation mode: AI-powered or Template-based
-5. Generate and download your compliance script
+### System Architecture
+![System Architecture](docs/images/00-system-architecture.png)
+*Comprehensive system architecture showing the integration between frontend, backend, and AI services*
 
-### 2. API Usage
+### Authentication & Login
+![Login Authentication](docs/images/01-login-authentication.png)
+*Secure JWT-based authentication with modern UI design and form validation*
 
-#### Upload Document
-```bash
-curl -X POST \
-  -F "file=@your_compliance_doc.pdf" \
-  http://localhost:5000/upload
-```
+### Dashboard Overview
+![Dashboard Overview](docs/images/02-dashboard-overview.png)
+*Real-time analytics dashboard with compliance status tracking and system metrics*
 
-#### Generate Script
-```bash
-curl -X POST http://localhost:5000/generate_script \
-  -H "Content-Type: application/json" \
-  -d '{
-    "policy": "1.1.1 (L1) Ensure Maximum password age is set to 60 or fewer days",
-    "auditRemediation": "audit",
-    "os": "windows",
-    "useAI": true,
-    "remediationSteps": "Optional remediation steps"
-  }'
-```
+### Document Management
+![Document Upload](docs/images/03-document-upload.png)
+*Intuitive document upload interface with drag-and-drop functionality*
 
-## 🎯 Template System
+![Document Analysis](docs/images/04-document-analysis.png)
+*AI-powered document analysis with framework detection and policy extraction*
 
-The application includes a flexible template system for both Windows and Linux scripts:
+### Script Generation & Management
+![Script Generation](docs/images/05-script-generation.png)
+*Automated compliance script generation with customizable parameters*
 
-### Windows Templates
-- `/src/templates/windows/powershell/audit_template.txt`
-- `/src/templates/windows/powershell/remediation_template.txt`
-- `/src/templates/windows/powershell/functions.json`
+![Generated Scripts](docs/images/06-generated-scripts.png)
+*Generated scripts with syntax highlighting and validation features*
 
-### Linux Templates
-- `/src/templates/linux/bash/audit_template.txt`
-- `/src/templates/linux/bash/remediation_template.txt`
-- `/src/templates/linux/bash/functions.json`
+### User Management & Analytics
+![User Profile](docs/images/07-user-profile.png)
+*User profile management with role-based access control*
 
-### Template Features
-- **Error Handling**: Comprehensive try-catch blocks
-- **Logging**: Timestamped logging with different levels
-- **Backup/Restore**: Automatic backup before changes
-- **Validation**: Input and configuration validation
-- **Customizable**: Easy to modify for your organization's needs
+![Analytics & Reporting](docs/images/08-analytics-reporting.png)
+*Comprehensive analytics and reporting dashboard with detailed metrics*
 
-## 📚 API Documentation
+### UI/UX Features
+![Dark Light Theme](docs/images/09-dark-light-theme.png)
+*Dark/Light theme toggle for enhanced user experience*
 
-### POST /upload
-
-Upload a compliance document for analysis.
-
-**Request:**
-- Method: `POST`
-- Content-Type: `multipart/form-data`
-- Body: `file` (PDF document)
-
-**Response:**
-```json
-{
-    "policies": ["List of extracted policies"],
-    "remediationPaths": ["List of remediation steps"],
-    "analysis": "AI analysis of the document"
-}
-```
-
-### POST /generate_script
-
-Generate a compliance script.
-
-**Request:**
-- Method: `POST`
-- Content-Type: `application/json`
-- Body:
-```json
-{
-    "policy": "Policy text",
-    "auditRemediation": "audit|remediation",
-    "os": "windows|linux",
-    "useAI": true|false,
-    "remediationSteps": "Optional remediation steps"
-}
-```
-
-**Response:**
-```json
-{
-    "script": "Generated script content"
-}
-```
-
-## 🔧 Development
-
-### Running Tests
-```bash
-# Install test dependencies
-pip install pytest pytest-cov
-
-# Run tests
-pytest tests/
-
-# Run with coverage
-pytest --cov=src tests/
-```
-
-### Code Formatting
-```bash
-# Format code
-black .
-
-# Check code style
-flake8 .
-```
-
-### Adding New Templates
-1. Create template files in `src/templates/{platform}/{shell}/`
-2. Update the template loader in `src/ai/model.py`
-3. Test with different compliance rules
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Package Installation Errors**:
-   ```bash
-   pip install --upgrade pip
-   pip install -r requirements.txt --no-cache-dir
-   ```
-
-2. **API Key Issues**:
-   - Ensure your Gemini API key is valid
-   - Check `.env` file configuration
-   - Verify API key permissions
-
-3. **Template Loading Errors**:
-   - Check file paths in `src/templates/`
-   - Verify file permissions
-   - Ensure templates directory structure is correct
-
-4. **Memory Issues with Large PDFs**:
-   - Increase system memory allocation
-   - Process PDFs in smaller chunks
-   - Use more efficient PDF processing
-
-### Development Guidelines
-- Follow PEP 8 style guidelines
-- Add tests for new features
-- Update documentation
-- Ensure backward compatibility
-
-## 🙏 Acknowledgments
-
-- Google Gemini Pro for AI capabilities
-- LangChain for AI orchestration
-- PyMuPDF for PDF processing
-- Flask for web framework
-- Open source community for inspiration
+![Responsive Mobile](docs/images/10-responsive-mobile.png)
+*Mobile-responsive design with Material-UI components*
 
 
-## 👥 Team Members
+### Team Members
 - Sameer Dhande
 - Yash Amane
 - Omkar Deshmukh
