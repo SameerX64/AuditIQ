@@ -181,20 +181,20 @@ npm start
 - Set secure JWT secrets
 - Enable CORS for your domain
 
-## 📸 Screenshots
 
 ### System Architecture
 ![System Architecture](docs/images/00-system-architecture.png)
 *Comprehensive system architecture showing the integration between frontend, backend, and AI services*
 
-### Document Upload
+## 📸 Screenshots
+- ### Document Upload
 ![Login Authentication](docs/images/01-login-authentication.png)
 *Intuitive document upload interface with drag-and-drop functionality*
 
-### Profile 
+- ### Profile 
 ![Dashboard Overview](docs/images/02-dashboard-overview.png)
 
-### Analysis and Reports
+- ### Analysis and Reports
 ![Document Upload](docs/images/03-document-upload.png)
 *Real-time analytics dashboard with compliance status tracking and system metrics*
 
@@ -204,17 +204,17 @@ npm start
 ![Script Generation](docs/images/05-script-generation.png)
 *Automated compliance script generation with customizable parameters*
 
-### Script Generation
+- ### Script Generation
 ![Generated Scripts](docs/images/06-generated-scripts.png)
 
 ![Responsive Mobile](docs/images/10-responsive-mobile.png)
 *Generated scripts with syntax highlighting and validation features*
 
-### Script Library
+- ### Script Library
 ![User Profile](docs/images/07-user-profile.png)
 *User profile management with role-based access control*
 
-### User Dashboard
+- ### User Dashboard
 ![Analytics & Reporting](docs/images/08-analytics-reporting.png)
 *Comprehensive analytics and reporting dashboard with detailed metrics*
 
