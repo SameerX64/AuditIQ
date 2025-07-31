@@ -183,7 +183,7 @@ npm start
 
 
 ### System Architecture
-![System Architecture](docs/images/00-system-architecture.png)
+![System Architecture](screenshots-images/system_architecture.png)
 *Comprehensive system architecture showing the integration between frontend, backend, and AI services*
 
 ## 📸 Screenshots
