@@ -38,7 +38,7 @@ sudo lsof -t -i tcp:5001 | xargs kill -9
 
 #### Example MongoDB URI format:
 ```
-MONGODB_URI=mongodb+srv://username:password--------------------------------------
+MONGODB_URI= ENTER YOUR MONDODB CONNECTION STRING HERE-------------------------------
 ```
 
 ### 3. Dependencies Issues
